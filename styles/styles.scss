@@ -1,3 +1,5 @@
+@import './media';
+
 * {
   margin: 0;
   padding: 0;
@@ -72,37 +74,20 @@ section {
   background-color: var(--color-primary);
 }
 
-.sec1 {
+.container {
   display: none;
-  transform: translateY(0) scale(1);
-}
-.sec2 {
-  display: none;
-  transform: translateY(0) scale(1);
-}
-.sec3 {
-  display: none;
-  transform: translateY(0) scale(1);
-}
-.sec4 {
-  display: none;
-  transform: translateY(0) scale(1);
-}
-.sec5 {
-  display: none;
-  transform: translateY(0) scale(1);
+  transform: translateY(-100%) scale(0);
+  transition: all .4s ease-in-out;
+  background-color: var(--color-primary);
 }
 
-.active{
-  display:block;
-  animation: scaleAnim 1s ease-in-out;
-  @keyframes scaleAnim {
-    0%{
-      transform: translateY(-100%) scaleY(0)
-    }
-    100%{
-      transform: translateY(0) scaleY(1)
-    }
+.active {
+  display: block;
+  animation: appear 1s ease-in-out;
+  transform: translateY(0) scaleY(1);
+  @keyframes appear {
+      0%{ transform: translateY(-100%) scaleY(0); }
+      100%{ transform: translateY(0) scaleY(1); }
   }
 }
 
